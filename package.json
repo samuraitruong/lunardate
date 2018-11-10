@@ -1,0 +1,37 @@
+{
+  "name": "lunardate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha -r ts-node/register test/**/*.test.ts -t 9000",
+    "lint": "tslint --fix -p .",
+    "build": "npm run lint && npm run test && tsc",
+    "postinstall": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/samuraitruong/lunardate.git"
+  },
+  "keywords": [
+    "lunar",
+    "date;",
+    "calendar"
+  ],
+  "author": "samuraitruong@hotmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/samuraitruong/lunardate/issues"
+  },
+  "homepage": "https://github.com/samuraitruong/lunardate#readme",
+  "dependencies": {
+    "@types/node": "^10.12.5",
+    "chai": "^4.2.0",
+    "mocha": "^5.2.0",
+    "ts-node": "^7.0.1"
+  },
+  "devDependencies": {
+    "@types/mocha": "^5.2.5",
+    "tslint": "^5.11.0"
+  }
+}
