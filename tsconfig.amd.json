@@ -1,0 +1,15 @@
+{
+    "compilerOptions": {
+        "outFile": "./dist/lunardate.amd.js",
+        "sourceMap": false,
+        "module": "system",
+        "target": "es5"
+    },
+    "exclude": [
+        "node_modules",
+        "**/node_modules/*"
+    ],
+    "include": [
+        "src"
+    ]
+}

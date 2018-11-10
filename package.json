@@ -7,6 +7,7 @@
     "test": "mocha -r ts-node/register test/**/*.test.ts -t 9000",
     "lint": "tslint --fix -p .",
     "build": "npm run lint && npm run test && tsc",
+    "build:amd": "tsc --project tsconfig.amd.json",
     "postinstall": "npm run build"
   },
   "repository": {
