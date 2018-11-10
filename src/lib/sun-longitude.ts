@@ -1,7 +1,7 @@
 import { PI } from "../model";
 import { INT } from "../util";
 
-/** Compute the longitude of the sun at any time. 
+/** Compute the longitude of the sun at any time.
  * Parameter: floating number jdn, the number of days since 1/1/4713 BC noon
  * Algorithm from: "Astronomical Algorithms" by Jean Meeus, 1998
  */
@@ -19,11 +19,11 @@ export function sunLongitude(jdn: number) {
     return L;
 }
 
-/* Compute sun position at midnight of the day with the given Julian day number. 
+/* Compute sun position at midnight of the day with the given Julian day number.
  * The time zone if the time difference between local time and UTC: 7.0 for UTC+7:00.
- * The function returns a number between 0 and 11. 
- * From the day after March equinox and the 1st major term after March equinox, 0 is returned. 
- * After that, return 1, 2, 3 ... 
+ * The function returns a number between 0 and 11.
+ * From the day after March equinox and the 1st major term after March equinox, 0 is returned.
+ * After that, return 1, 2, 3 ...
  */
 export function getSunLongitude(dayNumber: number, timeZone: number) {
     return INT(sunLongitude(dayNumber - 0.5 - timeZone / 24) / PI * 6);

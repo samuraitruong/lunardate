@@ -1,4 +1,4 @@
-export interface LunarDate {
+export interface ILunarDate {
     day: number;
     month: number;
     year: number;
