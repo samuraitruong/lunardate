@@ -4,9 +4,8 @@ node_js:
 scripts:
   - npm install
   - npm run lint
-  - ls
-  - npm run test
   - npm run build
+  - npm run test
   - ls
 deploy:
   skip_cleanup: true
