@@ -1,8 +1,11 @@
 {
   "name": "lunardate",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "",
   "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "test": "mocha -r ts-node/register test/**/*.test.ts -t 9000",
     "lint": "tslint --fix -p .",
