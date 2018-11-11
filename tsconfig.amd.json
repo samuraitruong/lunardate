@@ -3,7 +3,7 @@
         "outFile": "./dist/lunardate.amd.js",
         "sourceMap": false,
         "module": "system",
-        "target": "es5"
+        "target": "es3"
     },
     "exclude": [
         "node_modules",

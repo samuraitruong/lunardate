@@ -2,7 +2,7 @@
   "name": "lunardate",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "test": "mocha -r ts-node/register test/**/*.test.ts -t 9000",
     "lint": "tslint --fix -p .",

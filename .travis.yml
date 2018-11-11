@@ -4,3 +4,11 @@ node_js:
 scripts:
   - npm install
   - npm run build
+deploy:
+  provider: npm
+  email: samuraitruong@hotmail.com
+  api_key:
+    secure: NexqVrRNGg1La4JpxJEcK+4s7ZEC+lqvBGCWo58MhD4Vxugv7B3zSFixSlHNo7SxgGrafNmcuA1kYraib8uDfYWOcgqmfIAC3XYU2coECzVkCsBD9/GglYyhe7TL4x7RTI3krsnKY84Yo9k2sB2EBUB3Om3Mg4ksN3KhcnwRiIeffDHqfaYHuIvBEveWSubKen9tsILh5AhKAoNgALw1+2oBqFFMzwFoOv7UVFlEAeW6rwUZbpUAGXpsRfNa5a4mvoLTtGiiQVTSwW/OVHr7AbVzAn+d70wXYA1eYtbtKgfHB2ea66RdylcPN0nefDtGtCTMa4TaPzSgVV0rJH2XS4yH/ly9Q7J1aiYs2Nzrg+lw9xFZ5rgKVpvHbBTDk4HKrMy5pixmBbTJxj0iMGct/m9kNkzwcWOvkEn9EUXsOs5UytowA2nZ/dhgFW8uifSGTvaNJ6DeWUBj5y2Es9fGV4SF/4KH3O2kcbA4/jYLbiJ9I8PS4+G7Nys1VIVlKEBbjOd1FYvPG8+A9zsspo7HN+1jE4/cf8v+MSZWl5lrxC1LyVK2czokZPJfSQkIPYeKe7ylAEMKqfLDGCUneoZ1HcZNOJE16v8iuraG680EE7bqFij8oOmUJvaKfjCMwOPjciFiDOc4mhLZKA9fvQ9RHmfsnVsIoy3IBFzq5iA1nsY=
+  on:
+    tags: true
+    repo: samuraitruong/lunardate

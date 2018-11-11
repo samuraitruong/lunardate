@@ -1,11 +1,12 @@
-import { INT } from "../util";
-import { getLunarMonth11 } from "./get-lunar-month11";
-import { jdFromDate, jdToDate } from "./julian-date";
 import { getLeapMonthOffset } from "./leap-year";
+import { getLunarMonth11 } from "./get-lunar-month11";
 import { getNewMoonDay } from "./new-moon";
+import { INT } from "../util";
+import { jdFromDate, jdToDate } from "./julian-date";
+import { LunarDate } from "../model";
 
 /* Convert a lunar date to the corresponding solar date */
-export function convertLunar2Solar(lunarDay: number, lunarMonth: number, lunarYear: number, lunarLeap, timeZone) {
+export function convertLunar2Solar(lunarDay : number, lunarMonth : number, lunarYear : number, lunarLeap, timeZone) {
     let a11;
     let b11;
     let leapOff;
@@ -38,8 +39,13 @@ export function convertLunar2Solar(lunarDay: number, lunarMonth: number, lunarYe
     return jdToDate(monthStart + lunarDay - 1);
 }
 
-/* Comvert solar date dd/mm/yyyy to the corresponding lunar date */
-export function convertSolar2Lunar(dd: number, mm: number, yy: number, timeZone: number) {
+/** Comvert solar date dd/mm/yyyy to the corresponding lunar date
+ * @param {number} day
+ * @param {number} month
+ * @param {number} year
+ * @returns the date in lunar calendar system
+ */
+export function convertSolar2Lunar(day : number, month : number, year : number, timeZone : number) : LunarDate {
     let k;
     let dayNumber;
     let monthStart;
@@ -49,21 +55,21 @@ export function convertSolar2Lunar(dd: number, mm: number, yy: number, timeZone:
     let lunarMonth;
     let lunarYear;
     let lunarLeap;
-    dayNumber = jdFromDate(dd, mm, yy);
+    dayNumber = jdFromDate(day, month, year);
     k = INT((dayNumber - 2415021.076998695) / 29.530588853);
     monthStart = getNewMoonDay(k + 1, timeZone);
     if (monthStart > dayNumber) {
         monthStart = getNewMoonDay(k, timeZone);
     }
     // alert(dayNumber+" -> "+monthStart);
-    a11 = getLunarMonth11(yy, timeZone);
+    a11 = getLunarMonth11(year, timeZone);
     b11 = a11;
     if (a11 >= monthStart) {
-        lunarYear = yy;
-        a11 = getLunarMonth11(yy - 1, timeZone);
+        lunarYear = year;
+        a11 = getLunarMonth11(year - 1, timeZone);
     } else {
-        lunarYear = yy + 1;
-        b11 = getLunarMonth11(yy + 1, timeZone);
+        lunarYear = year + 1;
+        b11 = getLunarMonth11(year + 1, timeZone);
     }
     lunarDay = dayNumber - monthStart + 1;
     const diff = INT((monthStart - a11) / 29);
@@ -84,5 +90,5 @@ export function convertSolar2Lunar(dd: number, mm: number, yy: number, timeZone:
     if (lunarMonth >= 11 && diff < 4) {
         lunarYear -= 1;
     }
-    return new Array(lunarDay, lunarMonth, lunarYear, lunarLeap);
+    return new LunarDate(lunarYear, lunarMonth, lunarDay, lunarLeap === 1);
 }
