@@ -1,4 +1,5 @@
 # lunardate
+Thi is the javascript library to convert date to lunar date and vice versa.
 
 ## installation
 
@@ -27,4 +28,4 @@ console.log(lunarDate)
 
 ## Credit
 
-This library using the source from [https://www.informatik.uni-leipzig.de/~duc/amlich/](https://www.informatik.uni-leipzig.de/~duc/amlich/) with a small modification
+This library using the source from [https://www.informatik.uni-leipzig.de/~duc/amlich/](https://www.informatik.uni-leipzig.de/~duc/amlich/) with few small modification
