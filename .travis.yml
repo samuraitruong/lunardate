@@ -5,6 +5,7 @@ scripts:
   - npm install
   - npm run build
 deploy:
+  skip_cleanup: true
   provider: npm
   email: samuraitruong@hotmail.com
   api_key:
