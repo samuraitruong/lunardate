@@ -4,6 +4,7 @@ node_js:
 scripts:
   - npm install
   - npm run lint
+  - ls
   - npm run test
   - npm run build
   - ls
