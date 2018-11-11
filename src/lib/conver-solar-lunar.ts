@@ -1,12 +1,12 @@
-import { getLeapMonthOffset } from "./leap-year";
-import { getLunarMonth11 } from "./get-lunar-month11";
-import { getNewMoonDay } from "./new-moon";
-import { INT } from "../util";
-import { jdFromDate, jdToDate } from "./julian-date";
 import { LunarDate } from "../model";
+import { INT } from "../util";
+import { getLunarMonth11 } from "./get-lunar-month11";
+import { jdFromDate, jdToDate } from "./julian-date";
+import { getLeapMonthOffset } from "./leap-year";
+import { getNewMoonDay } from "./new-moon";
 
 /* Convert a lunar date to the corresponding solar date */
-export function convertLunar2Solar(lunarDay : number, lunarMonth : number, lunarYear : number, lunarLeap, timeZone) {
+export function convertLunar2Solar(lunarDay: number, lunarMonth: number, lunarYear: number, lunarLeap, timeZone) {
     let a11;
     let b11;
     let leapOff;
@@ -45,7 +45,7 @@ export function convertLunar2Solar(lunarDay : number, lunarMonth : number, lunar
  * @param {number} year
  * @returns the date in lunar calendar system
  */
-export function convertSolar2Lunar(day : number, month : number, year : number, timeZone : number) : LunarDate {
+export function convertSolar2Lunar(day: number, month: number, year: number, timeZone: number): LunarDate {
     let k;
     let dayNumber;
     let monthStart;
