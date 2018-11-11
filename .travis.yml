@@ -3,6 +3,8 @@ node_js:
   - stable
 scripts:
   - npm install
+  - npm run lint
+  - npm run test
   - npm run build
 deploy:
   skip_cleanup: true

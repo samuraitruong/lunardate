@@ -1,6 +1,6 @@
 {
   "name": "lunardate",
-  "version": "1.0.4",
+  "version": "1.0.",
   "description": "",
   "main": "./dist/index.js",
   "files": [
@@ -9,7 +9,8 @@
   "scripts": {
     "test": "mocha -r ts-node/register test/**/*.test.ts -t 9000",
     "lint": "tslint --fix -p .",
-    "build": "npm run lint && npm run test && tsc",
+    "build:dev": "npm run lint && npm run test && tsc",
+    "build": "tsc",
     "build:amd": "tsc --project tsconfig.amd.json",
     "postinstall1": "npm run build"
   },
