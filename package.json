@@ -1,6 +1,6 @@
 {
   "name": "lunardate",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "",
   "main": "./dist/index.js",
   "files": [
@@ -12,7 +12,8 @@
     "build:dev": "npm run lint && npm run test && tsc",
     "build": "tsc",
     "build:amd": "tsc --project tsconfig.amd.json",
-    "postinstall1": "npm run build"
+    "prepublish": "npm run build"
+
   },
   "repository": {
     "type": "git",
