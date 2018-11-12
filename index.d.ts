@@ -4,8 +4,8 @@ declare module "lunardate" {
         public month : number;
         public year : number;
         public isLeafYear : boolean;
-        public toDate : () => Date;
-        public toJd :() => number;
+        public toDate :  Date;
+        public toJd :number;
     }
     export function convertLunar2Solar(lunarDay : number, lunarMonth : number, lunarYear : number, lunarLeap : number, timeZone : number) : Date;
     /** Comvert solar date dd/mm/yyyy to the corresponding lunar date
