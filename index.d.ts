@@ -16,5 +16,5 @@ declare module "lunardate" {
      */
     export function convertSolar2Lunar(day : number, month : number, year : number, timeZone : number) : LunarDate;
     export function getSunLongitude(dayNumber: number, timeZone: number): number;
-    export function sunLongitude(jdn: number);
+    export function sunLongitude(jdn: number): number;
 }
